@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8y2urf4r00df"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_g527t"]
+[ext_resource type="Texture2D" uid="uid://wchbd3rwwiex" path="res://kenney_top-down-tanks-redux/PNG/Retina/tank_sand.png" id="2_eo0ey"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx50n"]
+size = Vector2(65, 72)
+
+[node name="Character" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_g527t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_eo0ey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1, -7)
+shape = SubResource("RectangleShape2D_yx50n")
