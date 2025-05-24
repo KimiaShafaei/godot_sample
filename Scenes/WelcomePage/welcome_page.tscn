@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://q85lxpw25i2l"]
 
 [ext_resource type="PackedScene" uid="uid://fr7egurlr5iv" path="res://Scenes/canvas_layer.tscn" id="1_abi8t"]
-[ext_resource type="Script" path="res://Scripts/welcome_page.gd" id="2_hqd2m"]
-[ext_resource type="Script" path="res://Scripts/button.gd" id="2_vp36e"]
+[ext_resource type="Script" uid="uid://bstmpmj5f5qri" path="res://Scenes/WelcomePage/welcome_page.gd" id="2_hqd2m"]
+[ext_resource type="Script" uid="uid://8ljta1xh81qn" path="res://Scenes/WelcomePage/button.gd" id="2_vp36e"]
 
 [node name="WelcomePage" instance=ExtResource("1_abi8t")]
 script = ExtResource("2_hqd2m")

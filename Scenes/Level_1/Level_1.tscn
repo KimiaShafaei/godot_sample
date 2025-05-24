@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8eiuc1kafptd"]
+
+[ext_resource type="PackedScene" uid="uid://5f7f1b30ymsd" path="res://LevelComponents/TileSets/tile_map_layer.tscn" id="1_8114j"]
+[ext_resource type="PackedScene" uid="uid://b8y2urf4r00df" path="res://Characters/Player/player.tscn" id="2_1g534"]
+[ext_resource type="PackedScene" uid="uid://d273dd0rlrm5m" path="res://LevelComponents/FinishLine/finish_line.tscn" id="3_wtjna"]
+[ext_resource type="Script" uid="uid://bn3lxab73f183" path="res://LevelComponents/FinishLine/finish_line.gd" id="4_h43gu"]
+
+[node name="Level_1" type="Node2D"]
+
+[node name="LevelMap" parent="." instance=ExtResource("1_8114j")]
+position = Vector2(568, 570)
+
+[node name="Player" parent="." instance=ExtResource("2_1g534")]
+position = Vector2(250, 322)
+scale = Vector2(0.520002, 0.560004)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="FinishLine" parent="." instance=ExtResource("3_wtjna")]
+position = Vector2(492, 249)
+script = ExtResource("4_h43gu")
