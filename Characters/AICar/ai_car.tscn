@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://fx47j55klfd1"]
+
+[ext_resource type="Script" uid="uid://d0gl7vremtulr" path="res://Characters/AICar/ai_car.gd" id="1_8edm0"]
+[ext_resource type="Texture2D" uid="uid://dhg741wyuey71" path="res://kenney_top-down-tanks-redux/PNG/Default size/tank_red.png" id="1_o1vl3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukg34"]
+size = Vector2(34, 34)
+
+[node name="AICar" type="CharacterBody2D"]
+script = ExtResource("1_8edm0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o1vl3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_ukg34")

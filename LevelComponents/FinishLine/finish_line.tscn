@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://d273dd0rlrm5m"]
+[gd_scene load_steps=4 format=3 uid="uid://d273dd0rlrm5m"]
 
 [ext_resource type="Texture2D" uid="uid://p51nisrvhl10" path="res://kenney_top-down-tanks-redux/PNG/Default size/fenceYellow.png" id="1_bisty"]
+[ext_resource type="Script" uid="uid://bn3lxab73f183" path="res://LevelComponents/FinishLine/finish_line.gd" id="1_tgrc1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nw7js"]
 size = Vector2(71, 7)
@@ -8,10 +9,11 @@ size = Vector2(71, 7)
 [node name="FinishLine" type="Area2D"]
 rotation = 1.5708
 scale = Vector2(1, 2)
+script = ExtResource("1_tgrc1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_bisty")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -3.5)
+position = Vector2(-1.99976, 33)
 shape = SubResource("RectangleShape2D_nw7js")

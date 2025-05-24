@@ -10,6 +10,9 @@ extends CharacterBody2D
 
 @onready var finish_line = $"../FinishLine"
 
+func _enter_tree() -> void:
+	SignalHub.on_race_finished.connect(game_finished)
+
 func _physics_process(delta: float) -> void:
 	# Input handling (same as before)
 	var v_direction := Input.get_axis("break", "accelerate")
@@ -50,3 +53,7 @@ func _physics_process(delta: float) -> void:
 # For direction checking in finish line
 func get_movement_direction() -> Vector2:
 	return velocity
+	
+func game_finished():
+	velocity = Vector2.ZERO
+	set_physics_process(false) # Stop movement
