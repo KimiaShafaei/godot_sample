@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8eiuc1kafptd"]
+[gd_scene load_steps=9 format=3 uid="uid://b8eiuc1kafptd"]
 
 [ext_resource type="PackedScene" uid="uid://5f7f1b30ymsd" path="res://LevelComponents/TileSets/tile_map_layer.tscn" id="1_8114j"]
 [ext_resource type="Script" uid="uid://7no02vpvvb5i" path="res://Scenes/Level_1/level.gd" id="1_i4pw6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d273dd0rlrm5m" path="res://LevelComponents/FinishLine/finish_line.tscn" id="3_wtjna"]
 [ext_resource type="PackedScene" uid="uid://bkjqxf45r30jv" path="res://LevelComponents/RaceTrack/race_track.tscn" id="5_7ke4i"]
 [ext_resource type="Script" uid="uid://banggfgo0510n" path="res://LevelComponents/RaceTrack/race_track.gd" id="6_ukg34"]
+[ext_resource type="PackedScene" uid="uid://tghsbwug6vlf" path="res://LevelComponents/Timer/timer.tscn" id="8_x6sy3"]
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_i4pw6")
@@ -28,3 +29,5 @@ position = Vector2(492, 249)
 
 [node name="RaceTrack" parent="." instance=ExtResource("5_7ke4i")]
 script = ExtResource("6_ukg34")
+
+[node name="Timer" parent="." instance=ExtResource("8_x6sy3")]

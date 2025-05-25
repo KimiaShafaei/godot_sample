@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://tghsbwug6vlf"]
+
+[ext_resource type="Script" uid="uid://dw16pwmlm5xib" path="res://LevelComponents/Timer/timer.gd" id="1_mkgsg"]
+
+[node name="Timer" type="Node"]
+script = ExtResource("1_mkgsg")
