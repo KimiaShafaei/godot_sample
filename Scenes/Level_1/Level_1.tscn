@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8eiuc1kafptd"]
+[gd_scene load_steps=11 format=3 uid="uid://b8eiuc1kafptd"]
 
-[ext_resource type="PackedScene" uid="uid://5f7f1b30ymsd" path="res://LevelComponents/TileSets/tile_map_layer.tscn" id="1_8114j"]
+[ext_resource type="PackedScene" uid="uid://5f7f1b30ymsd" path="res://TileSets/tile_map_layer.tscn" id="1_8114j"]
 [ext_resource type="Script" uid="uid://7no02vpvvb5i" path="res://Scenes/Level_1/level.gd" id="1_i4pw6"]
 [ext_resource type="PackedScene" uid="uid://b8y2urf4r00df" path="res://Characters/Player/player.tscn" id="2_1g534"]
 [ext_resource type="PackedScene" uid="uid://b0yvlmqtgkt1e" path="res://Scenes/UIs/ui.tscn" id="2_q4rrd"]
 [ext_resource type="PackedScene" uid="uid://d273dd0rlrm5m" path="res://LevelComponents/FinishLine/finish_line.tscn" id="3_wtjna"]
+[ext_resource type="PackedScene" uid="uid://ca1nhp23bvf1e" path="res://LevelComponents/Camera/camera_2d.tscn" id="5_5t77r"]
 [ext_resource type="PackedScene" uid="uid://bkjqxf45r30jv" path="res://LevelComponents/RaceTrack/race_track.tscn" id="5_7ke4i"]
+[ext_resource type="Script" uid="uid://sysrvkwi0xib" path="res://LevelComponents/Camera/camera_2d.gd" id="6_fmmc4"]
 [ext_resource type="Script" uid="uid://banggfgo0510n" path="res://LevelComponents/RaceTrack/race_track.gd" id="6_ukg34"]
 [ext_resource type="PackedScene" uid="uid://tghsbwug6vlf" path="res://LevelComponents/Timer/timer.tscn" id="8_x6sy3"]
 
@@ -22,7 +24,8 @@ position = Vector2(568, 570)
 position = Vector2(250, 322)
 scale = Vector2(0.4, 0.4)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" parent="Player" instance=ExtResource("5_5t77r")]
+script = ExtResource("6_fmmc4")
 
 [node name="FinishLine" parent="." instance=ExtResource("3_wtjna")]
 position = Vector2(492, 249)
