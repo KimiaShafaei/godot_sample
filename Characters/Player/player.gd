@@ -12,6 +12,7 @@ extends CharacterBody2D
 
 func _enter_tree() -> void:
 	SignalHub.on_race_finished.connect(game_finished)
+	SignalHub.on_timer_out.connect(game_finished)
 
 func _physics_process(delta: float) -> void:
 	# Input handling (same as before)

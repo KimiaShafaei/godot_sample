@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8y2urf4r00df"]
+[gd_scene load_steps=5 format=3 uid="uid://b8y2urf4r00df"]
 
 [ext_resource type="Script" uid="uid://bfu5vrqhx4d6o" path="res://Characters/Player/player.gd" id="1_g527t"]
 [ext_resource type="Texture2D" uid="uid://wchbd3rwwiex" path="res://kenney_top-down-tanks-redux/PNG/Retina/tank_sand.png" id="2_eo0ey"]
+[ext_resource type="PackedScene" uid="uid://ca1nhp23bvf1e" path="res://LevelComponents/Camera/camera_2d.tscn" id="3_cue0d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yx50n"]
 size = Vector2(65, 72)
@@ -17,3 +18,5 @@ texture = ExtResource("2_eo0ey")
 visible = false
 position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_yx50n")
+
+[node name="Camera2D" parent="." instance=ExtResource("3_cue0d")]

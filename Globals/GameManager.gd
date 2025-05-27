@@ -12,8 +12,8 @@ func _enter_tree() -> void:
 	SignalHub.on_race_finished.connect(on_race_finished)
 
 func on_race_finished():
-	print("You won!")
+	print("GameManger: You won!")
 	
 func on_loop_finished():
-	print("On loop is finished! Loop: ", loops)
+	print("GameManager: On loop is finished! Loop: ", loops)
 	loops += 1

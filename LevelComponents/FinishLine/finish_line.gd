@@ -22,10 +22,10 @@ func _on_body_entered(body):
 			if last_loop:
 				SignalHub.on_race_finished.emit()
 				return
-			print("Lap counted!")
+			print("FinishLine: Lap counted!")
 			SignalHub.on_loop_finished.emit()
 		else:
-			print("Wrong direction, no lap counted.")
+			print("FinishLine: Wrong direction, no lap counted.")
 			
 func _process(_delta: float) -> void:
 	if GameManager.loops == level.LevelLoops:
