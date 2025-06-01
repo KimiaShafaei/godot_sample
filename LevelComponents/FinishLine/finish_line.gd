@@ -14,16 +14,42 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 	
 func _on_body_entered(body):
-	if body.name == "Player":
+	if GameManager.race_finish:
+		return
+	if body is CharacterBody2D:
 		var movement_direction = body.get_movement_direction() # You implement this on the player
 		var dot = movement_direction.normalized().dot(allowed_direction.normalized())
 		
 		if dot > 0.7: # Acceptable angle tolerance (1.0 = perfect alignment)
-			if last_loop:
-				SignalHub.on_race_finished.emit()
+			GameManager.increase_racer_loop(body)
+			var loops_complete = level.LevelLoops
+
+			var player = get_tree().get_first_node_in_group("Player")
+			var ai_car = get_tree().get_first_node_in_group("AICar")
+
+			var player_loops = GameManager.get_loop(player)
+			var ai_car_loops = GameManager.get_loop(ai_car)
+
+			# Player finishes first
+			if body == player and player_loops >= loops_complete:
+				if ai_car_loops < loops_complete:
+					SignalHub.on_race_finished.emit("win")
+				else:
+					SignalHub.on_race_finished.emit("lose")
+				GameManager.race_finish = true
 				return
-			print("FinishLine: Lap counted!")
-			SignalHub.on_loop_finished.emit()
+			
+			# AICar finishes first
+			if body == ai_car and ai_car_loops >= loops_complete:
+				if player_loops > loops_complete:
+					SignalHub.on_race_finished.emit("win")
+				else:
+					SignalHub.on_race_finished.emit("lose")
+				GameManager.race_finish = true
+				return
+			
+			else:
+				SignalHub.on_loop_finished.emit()
 		else:
 			print("FinishLine: Wrong direction, no lap counted.")
 			

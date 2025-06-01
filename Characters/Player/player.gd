@@ -10,6 +10,10 @@ extends CharacterBody2D
 
 @onready var finish_line = $"../FinishLine"
 
+func _ready():
+	GameManager.register_racer(self)
+	add_to_group("Player")
+
 func _enter_tree() -> void:
 	SignalHub.on_race_finished.connect(game_finished)
 	SignalHub.on_timer_out.connect(game_finished)
@@ -55,6 +59,6 @@ func _physics_process(delta: float) -> void:
 func get_movement_direction() -> Vector2:
 	return velocity
 	
-func game_finished():
+func game_finished(_result = null):
 	velocity = Vector2.ZERO
 	set_physics_process(false) # Stop movement
