@@ -36,6 +36,6 @@ func start_race():
 	race_started = true
 	race_finished = false
 	
-func game_finished():
+func game_finished(_result = null):
 	race_finished = true
 	race_started = false

@@ -32,6 +32,7 @@ func _on_body_entered(body):
 
 			# Player finishes first
 			if body == player and player_loops >= loops_complete:
+				SignalHub.on_loop_finished.emit()
 				if ai_car_loops < loops_complete:
 					SignalHub.on_race_finished.emit("win")
 				else:
@@ -41,6 +42,7 @@ func _on_body_entered(body):
 			
 			# AICar finishes first
 			if body == ai_car and ai_car_loops >= loops_complete:
+				SignalHub.on_loop_finished.emit()
 				if player_loops > loops_complete:
 					SignalHub.on_race_finished.emit("win")
 				else:

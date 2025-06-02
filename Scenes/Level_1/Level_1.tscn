@@ -10,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://tghsbwug6vlf" path="res://LevelComponents/Timer/timer.tscn" id="8_x6sy3"]
 
 [node name="Level_1" type="Node2D"]
+position = Vector2(7, 5)
 script = ExtResource("1_i4pw6")
-LevelLoops = 2
+LevelLoops = 3
 
 [node name="UI" parent="." instance=ExtResource("2_q4rrd")]
 

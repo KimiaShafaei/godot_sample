@@ -1,6 +1,5 @@
 extends Node
 
-
 var racers = []
 var racer_loops = {}
 var current_level: int = 1

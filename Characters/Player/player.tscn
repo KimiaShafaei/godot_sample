@@ -4,8 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://wchbd3rwwiex" path="res://kenney_top-down-tanks-redux/PNG/Retina/tank_sand.png" id="2_eo0ey"]
 [ext_resource type="PackedScene" uid="uid://ca1nhp23bvf1e" path="res://LevelComponents/Camera/camera_2d.tscn" id="3_cue0d"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx50n"]
-size = Vector2(65, 72)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cue0d"]
+radius = 39.0
+height = 88.0
 
 [node name="Character" type="CharacterBody2D"]
 motion_mode = 1
@@ -16,7 +17,7 @@ texture = ExtResource("2_eo0ey")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(1, -7)
-shape = SubResource("RectangleShape2D_yx50n")
+position = Vector2(1, -2)
+shape = SubResource("CapsuleShape2D_cue0d")
 
 [node name="Camera2D" parent="." instance=ExtResource("3_cue0d")]
